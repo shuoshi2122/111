@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int n,max=0,sum=0,i,j,fushu=0,a[100];
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+		if(a[i]>0) fushu=1;
+	}
+	for(i=0;i<n;i++) 
+	{
+		sum=0;
+		for(j=i;j<n;j++)
+		{
+			sum=sum+a[j];
+			if(sum>max) max=sum;
+		}
+	}
+	if(fushu==0) max=0;
+	printf("%d",max);
+	return 0;
+}
